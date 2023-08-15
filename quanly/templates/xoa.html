@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+{% block content %}
+<form method="POST" action="" >
+    {% csrf_token %}
+    <p>Ban co muon xoa "{{xoa}}" khong?</p>
+
+
+    <button><a href='/'>Khong</a></button>
+    <button><input type="submit" value="Co" /></button>
+{% endblock content %}

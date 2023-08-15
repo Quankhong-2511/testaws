@@ -1,0 +1,28 @@
+<style>
+.navbar{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+}
+</style>
+
+<a href='/'><h2>PHAN MEM QUAN LY SINH VIEN</h2></a>
+
+<form action="{% url 'home' %}" method="GET" class="navbar">
+    <div>
+        <input type="text" name="q" placeholder="Tìm kiếm sinh viên"/>
+        <input type="submit" value="Tim Kiem"/>
+    </div>
+    <div>
+        {% if request.user.is_authenticated %}
+        <button><a href="{% url 'dangxuat' %}">Dang Xuat</a></button>
+        {% else %}
+        <button><a href="{% url 'dangnhap' %}">Dang Nhap</a></button>
+        {% endif %}
+    </div>
+</form>
+<div>
+    <p>Chao  </p>
+</div>
+
+
+<hr>

@@ -1,0 +1,70 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class='home-container'>
+    <div>
+        <h2>Có {{quanly_count}} sinh viên</h2>
+        <a href="{% url 'them' %}"><input type="submit" value="Them sinh vien"/></a>
+        <hr>
+        <div>
+            <table>
+                <tr>
+                    <th>MaSv</th>
+                    <th>Ten SV</th>
+                    <th>Gioi Tinh</th>
+                    <th>Ngay Sinh</th>
+                    <th>Dia Chi</th>
+                    <th>Xep hang</th>
+                    <th colspan="3">Chuc Nang</th>
+                </tr>
+                {% for x in danhsach %}
+                    <tr>
+                        <td>{{x.id}}</td>
+                        <td>{{x.ten_sv}}</td>
+                        <td>{{x.gioi_tinh}}</td>
+                        <td>{{x.ngay_sinh}}</td>
+                        <td>{{x.dia_chi}}</td>
+                        <td>{{x.xep_hang}}</td>
+                        <td><button><a href='{% url 'detail' x.id %}'>Xem</a></button></td>
+                        <td><button  style="background-color: blue" ><a style="color: white" href='{% url 'sua' x.id %}'>Sua</a></button></td>
+                        <td><button style="background-color: red "><a style="color: white" href='{% url 'xoa' x.id %}'>Xoa</a></button></td>
+                        
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+    <div>
+        <h3>Loc</h3><br>
+        <hr>
+        <div>Theo Gioi Tinh</div>
+        <div>
+            <a href="{% url 'home' %}"> Tat Ca </a>
+        </div>
+        
+        <div>
+            <a href="{% url 'home' %}?q=Nu"> Nu </a>
+        </div>
+        <div>
+            <a href="{% url 'home' %}?q=Nam"> Nam </a>
+        </div>
+        <hr>
+        <div>Theo Xep Hang</div>
+        <div>
+            <a href="{% url 'home' %}"> Tat Ca </a>
+        </div>
+        
+        <div>
+            <a href="{% url 'home' %}?q=Gioi"> Gioi </a>
+        </div>
+        <div>
+            <a href="{% url 'home' %}?q=Kha"> Kha </a>
+        </div>
+        <div>
+            <a href="{% url 'home' %}?q=TB"> TB </a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

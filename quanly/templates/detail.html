@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1>Detail Template</h1>
+
+<table>
+    <tr>
+        <th>MaSv</th>
+        <th>Ten SV</th>
+        <th>Gioi Tinh</th>
+        <th>Ngay Sinh</th>
+        <th>Dia Chi</th>
+        <th>Diem</th>
+        <th>Xep Hang</th>
+
+    </tr>
+    <tr>
+        <td>{{chitiet.id}}</td>
+        <td>{{chitiet.ten_sv}}</td>
+        <td>{{chitiet.gioi_tinh}}</td>
+        <td>{{chitiet.ngay_sinh}}</td>
+        <td>{{chitiet.dia_chi}}</td>
+        <td>{{chitiet.diem_tb}}</td>
+        <td>{{chitiet.xep_hang}}</td>
+    </tr>
+</table>
+<button><a href='/'>Tro lai</a></button>
+
+{% endblock content %}
